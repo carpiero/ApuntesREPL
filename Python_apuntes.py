@@ -1359,7 +1359,7 @@ try:
 except:
   pass
 
-#Total amount of points
+#KATA Total amount of points
 #version 1
 def points(games):
   total=0
