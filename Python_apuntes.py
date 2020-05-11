@@ -1309,7 +1309,24 @@ d.['d']=8 #añadir al diccionario
 d['d'] #llamar
 #type error
 #value error
+#import error no tienes importador instalado
 #io error archivo que no existe ruta mal
+#manually raisen exceptions
+def even_number_check(n):
+  if n % 2 != 0:
+    raise ValueError("number is not even, try again ¯\_(⊙︿⊙)_/¯")
+  else:
+    print('this number is even ʕᵔᴥᵔʔ')
+#el que tu quieres
+class ASASAS(Exception):
+  pass
+def integer_number_check(n):
+  if type(n) is not int:
+    raise ASASAS("number is not an integer, try again ¯\_(⊙︿⊙)_/¯")
+  else:
+    print('this number is an integer ʕᵔᴥᵔʔ')
+integer_number_check('a')
+
 #exception handling
 try: #lo que querermos ejecutar
   even_number_check(2)
@@ -1320,7 +1337,6 @@ else: #ejecutar cuando no hay error
   print('the number is even, no error was raised...')
 finally: #ejecutar siempre
   print('this is going to execute whatever happens...')
-    
 print('this cell is going to execute till the end...')
 
 def even_number_check(n):
@@ -1339,6 +1355,7 @@ number_list = [1, 2, 3, 4, 5, 5.5, 6, 7, 8, 9, 10, 'a']
 evens = []
 
 for number in number_list:
+    
   try:
     integer_number_check(number)
   except ValueError:  # broad error clauses are not recommended
@@ -1352,6 +1369,7 @@ for number in number_list:
       print(f'error checking the number {number} is even...')
     else:
       evens.append(number)
+
 
 #se ejecuta siempre
 try:
